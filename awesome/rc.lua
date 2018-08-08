@@ -102,10 +102,11 @@ myawesomemenu = {
 --                         })
 
 mymainmenu = awful.menu({ items = { { "谷歌浏览器", "google-chrome" },
-									{ "网易云音乐", "music" },
-									{ "微信", "wechat" },
-									{ "文件管理", "nautilus"},
-									{ "注销", awesome.quit },
+				    { "网易云音乐", "music" },
+				    { "微信", "wechat" },
+				    { "文件管理", "nautilus"},
+				    { "系统设置", "gnome-control-center"},
+				    { "注销", awesome.quit },
                                     { "重启电脑", "reboot"},
                                     { "关机", "shutdown -h now"}
                                   }
