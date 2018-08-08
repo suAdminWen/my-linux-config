@@ -13,7 +13,6 @@ nmap <Leader>m :nohl<CR>
 vnoremap <Leader>y "+y
 " 设置快捷键将系统剪贴板内容粘贴至 vim
 nmap <Leader>p "+p
-
 " 让配置变更立即生效
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
@@ -30,6 +29,11 @@ set autoread
 " 开启文件类型检测，但Vundle插件要求关闭该选项
 filetype off
 
+" 高亮当前行和列
+set cursorline
+set cursorcolumn
+" 颜色
+colorscheme joit
 " 开启语法高亮
 if has("syntax")
 	syntax on
@@ -126,6 +130,8 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'lilydjwg/fcitx.vim'
 " Github Plugin End
 
 
@@ -242,6 +248,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeMinimalUI=1		" 不显示项目树上的额外信息，例如帮助，提示什么的
 " 隐藏pyc文件
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+" 显示隐藏文件
+let NERDTreeShowHidden=1
+" 删除文件时自动删除对应的buffer
+let NERDTreeAutoDeleteBuffer=1
 
 " 绑定F2到NERDTreeToggle
 map <F2> :NERDTreeToggle<CR>
@@ -249,6 +259,15 @@ let g:nerdtree_tabs_open_on_gui_startup=1
 " 自动折叠插件 SimpylFold
 let g:SimpyFold_docstring_preview=1		" 显示折叠代码的文档字符串
 
+" Indent Guides 插件
+" 随 vim 自启动
+let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+" 色块宽度
+let g:indent_guides_guide_size=1
+" 快捷键 i 开/关缩进可视化
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
 
 " 自动保存
 set autowrite
