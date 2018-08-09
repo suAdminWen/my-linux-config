@@ -105,7 +105,8 @@ mymainmenu = awful.menu({ items = { { "谷歌浏览器", "google-chrome" },
 				    { "网易云音乐", "music" },
 				    { "微信", "wechat" },
 				    { "文件管理", "nautilus"},
-				    { "系统设置", "gnome-control-center"},
+				    { "系统设置", "gnome-control-center"},  -- Ubuntu18
+				    -- { "系统设置", "unity-control-center"},  -- Ubuntu16
 				    { "注销", awesome.quit },
                                     { "重启电脑", "reboot"},
                                     { "关机", "shutdown -h now"}
